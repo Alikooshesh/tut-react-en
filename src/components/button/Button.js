@@ -1,8 +1,14 @@
 import './button.css'
 
 function Button({children , style}){
+
     return(
-        <button className='btn' style={style}>{children}</button>
+        <button 
+            onClick={()=>{console.log("test")}}
+            className='btn' 
+            style={style}>
+                {children}
+        </button>
     )
 }
 
