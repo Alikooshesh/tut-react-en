@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import TestText from './components/testText/TestText'
 import Button from './components/button/Button';
 import './App.css';
 import './newStyle.css'
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [counter , setCounter] = useState(0)
+
+  useEffect(()=>{
+    console.log("counter changed!")
+  },[counter])
 
   return (
     <div>
 
-      <Button style={{backgroundColor : "red"}}>
-        its children
-      </Button>
+      <p>
+        {counter}
+      </p>
 
-      <Button onClickHandler={()=>console.log('its called from parent')}>
-        its second children
-      </Button>
+      <Button onClickHandler={()=> setCounter(counter+1)}>+</Button>
     </div>
   );
-}
+} 
 
 export default App;
