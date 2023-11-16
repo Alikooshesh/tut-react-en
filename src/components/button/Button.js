@@ -1,8 +1,8 @@
 import './button.css'
 
-function Button(){
+function Button({children , style}){
     return(
-        <button className='btn'>click here!</button>
+        <button className='btn' style={style}>{children}</button>
     )
 }
 
