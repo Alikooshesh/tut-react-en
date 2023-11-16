@@ -1,10 +1,10 @@
 import './button.css'
 
-function Button({children , style}){
+function Button({children , style , onClickHandler}){
 
     return(
         <button 
-            onClick={()=>{console.log("test")}}
+            onClick={onClickHandler}
             className='btn' 
             style={style}>
                 {children}

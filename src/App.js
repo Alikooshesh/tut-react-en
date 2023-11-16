@@ -13,7 +13,7 @@ function App() {
         its children
       </Button>
 
-      <Button >
+      <Button onClickHandler={()=>console.log('its called from parent')}>
         its second children
       </Button>
     </div>
