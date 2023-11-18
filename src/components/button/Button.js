@@ -1,6 +1,10 @@
-function Button({children , onclickHandler}){
+import './button.css'
+
+function Button({children,onclickHandler}){
     return(
-        <button onClick={onclickHandler}>{children}</button>
+        <button className='btn' onClick={onclickHandler}>
+            {children}
+        </button>
     )
 }
 
