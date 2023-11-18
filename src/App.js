@@ -1,24 +1,21 @@
-import Button from './components/button/Button';
-import './App.css';
-import './newStyle.css'
-import { useEffect, useState } from 'react';
+import { useState } from "react";
+import Button from "./components/button/Button";
 
 function App() {
 
-  const [counter , setCounter] = useState(0)
 
-  useEffect(()=>{
-    console.log("counter changed!")
-  },[counter])
+  const [counter , setCounter] = useState(0)
 
   return (
     <div>
+      <Button onclickHandler={()=> setCounter(counter-1)}>
+        -
+      </Button>
+      <p>{counter}</p>
 
-      <p>
-        {counter}
-      </p>
-
-      <Button onClickHandler={()=> setCounter(counter+1)}>+</Button>
+      <Button onclickHandler={()=> setCounter(counter+1)}>
+        +
+      </Button>
     </div>
   );
 } 

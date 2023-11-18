@@ -1,15 +1,6 @@
-import { useEffect } from 'react'
-import './button.css'
-
-function Button({children , style , onClickHandler}){
-
+function Button({children , onclickHandler}){
     return(
-        <button 
-            onClick={onClickHandler}
-            className='btn' 
-            style={style}>
-                {children}
-        </button>
+        <button onClick={onclickHandler}>{children}</button>
     )
 }
 
