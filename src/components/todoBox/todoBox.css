@@ -1,5 +1,9 @@
 .todo-box{
+    width: 100%;
     border: 1px solid black;
     padding: 8px;
     background-color: cyan;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

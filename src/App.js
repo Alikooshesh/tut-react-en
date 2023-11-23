@@ -10,19 +10,22 @@ function App() {
 
   const [inpVal , setInpVal] = useState("")
 
+  function removeTodo(todoId){
+    setData(data.filter(item => item.id != todoId))
+  }
+
   return (
     <div className='container'>
-      {console.log(data)}
       <div className="addNewTodo-wrapper">
         <Input valueState={inpVal} onChangeHandler={(e)=> setInpVal(e.target.value)}/>
-        <Button onclickHandler={()=>setData([...data,inpVal])}>+</Button>
+        <Button onclickHandler={()=>setData([...data,{id : Date.now() , text : inpVal}])}>+</Button>
       </div>
 
       <div className='todoList-wrapper'>
 
         {data.map(item => {
           return(
-            <TodoBox text={item}/>
+            <TodoBox id={item.id} text={item.text} removeTodo={removeTodo}/>
           )
         })}
       </div>
