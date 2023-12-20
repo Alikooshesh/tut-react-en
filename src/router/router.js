@@ -2,7 +2,7 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import HomePage from '../pages/homePage/HomePage';
-import BlogPage from "../pages/blogPage/blogPage";
+import CountryPage from "../pages/countryPage/CountryPage";
 
 const router = createBrowserRouter([
     {
@@ -10,20 +10,20 @@ const router = createBrowserRouter([
       element: <HomePage/>,
     },
     {
-      path : '/blog',
-      element: <BlogPage/>,
-      children : [
-        {
-            path : '/blog/test',
-            element : <p>its test address</p>
-        },
-        {
-            path : '/blog/:id',
-            element : <p>its for id page</p>
-        }
-        
-      ]
+        path: "/country",
+        element: <CountryPage/>,
+        children : [
+            {
+                path:'/country/:cca2',
+                children : [
+                    {
+                        path: '/country/:cca2/weather'
+                    }
+                ]
+            }
+        ]
     }
+    
   ]);
 
 export {router}
